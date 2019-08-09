@@ -10,9 +10,24 @@
 		<content>
 			<List noDataText="{i18n>list_empty}" id="list" items="{/Headers}" itemPress="onItemPress">
 				<items>
-					<ObjectListItem type="Active" title="{SupplierName}" number="{GrossAmount}" numberUnit="{CurrencyCode}" intro="{PoId}">
+					<ObjectListItem 
+						type="Active" 
+						title="{path:'SupplierName', formatter: '.formatador.toUpperCase' }" 
+						number="{GrossAmount}" 
+						numberUnit="{CurrencyCode}" 
+						intro="{PoId}"
+						numberState="{= ( ${GrossAmount} > 15000 ) ? 'Error': 'Success' }"
+						>
 						<attributes>
-							<ObjectAttribute title="{i18n>created_at}" text="{CreatedAt}"/>
+							<ObjectAttribute title="{i18n>created_at}" 
+								text="{
+									path: 'CreatedAt', 
+									type: 'sap.ui.model.type.Date' ,
+									formatOptions: {
+										style: 'medium',
+										UTC: true
+									}
+								}"/>
 						</attributes>
 					</ObjectListItem>
 				</items>

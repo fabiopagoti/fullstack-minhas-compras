@@ -2,7 +2,7 @@
 	controllerName="hayamax.aluno0.minhas_compras.controller.S2">
 	<Page title="{i18n>s2_title}">
 		<content>
-			<ObjectHeader xmlns="sap.m" title="{SupplierName}" number="{GrossAmount}" numberUnit="{CurrencyCode}" intro="{PoId}">
+			<ObjectHeader xmlns="sap.m" title="{path:'SupplierName',formatter: '.formatador.toUpperCase' }" number="{GrossAmount}" numberUnit="{CurrencyCode}" intro="{PoId}">
 				<attributes>
 					<ObjectAttribute text="{CreatedAt}" title="{i18n>created_at}"/>
 				</attributes>
@@ -13,7 +13,15 @@
 						<cells>
 							<Text text="{Position}"/>
 							<ObjectIdentifier title="{MaterialId}" text="{MaterialName}"/>
-							<ObjectNumber number="1" unit="PC"/>
+							<ObjectNumber 
+								number="{ 
+										parts: [
+											{ path: 'Price' },
+											{ path: 'GrossAmount' }
+										], 
+										formatter: '.formatador.calcQuantity'
+									}" 
+									unit="PC"/>
 							<ObjectNumber number="{Price}" unit="{PriceCurrency}"/>
 							<ObjectNumber number="{GrossAmount}" unit="{GrossAmountCurrency}"/>
 						</cells>

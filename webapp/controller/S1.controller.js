@@ -1,9 +1,13 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/Filter"
-	], function (Controller, Filter) {
+	"sap/ui/model/Filter", // VIRGULA
+	"hayamax/aluno0/minhas_compras/model/formatter"
+	], function (Controller, Filter, formatter) {
 	"use strict";
 	return Controller.extend("hayamax.aluno0.minhas_compras.controller.S1", {
+		
+		formatador: formatter,
+		
 		onInit: function () {},
 		onItemPress: function (oEvent) {
 			var oParameters = oEvent.getParameters();

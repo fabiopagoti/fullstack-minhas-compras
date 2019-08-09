@@ -1,9 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller", // VIRGULA
+	"hayamax/aluno0/minhas_compras/model/formatter"
+], function (Controller, formatter) {
 	"use strict";
 
 	return Controller.extend("hayamax.aluno0.minhas_compras.controller.S2", {
+
+		formatador: formatter,
 
 		onInit: function () {
 
@@ -19,8 +22,8 @@ sap.ui.define([
 			var sPoKey = oArguments.id; // parametro da rota (manifest.json e navTo)
 
 			var oDataModel = this.getOwnerComponent().getModel();
-			
-			var that = this; 
+
+			var that = this;
 			oDataModel.metadataLoaded().then(function () {
 
 				var sPath = oDataModel.createKey("Headers", {
