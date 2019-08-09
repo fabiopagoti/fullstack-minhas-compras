@@ -1,11 +1,22 @@
-<mvc:View controllerName="hayamax.aluno0.minhas_compras.controller.S1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content></content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="hayamax.aluno0.minhas_compras.controller.S1" displayBlock="true">
+	<Page id="page" title="{i18n>s1_title}">
+		<subHeader>
+			<Toolbar width="100%" id="toolbar1">
+				<content>
+					<SearchField xmlns="sap.m" liveChange="onSearch" placeholder="{i18n>s1_searchfield_placeholder}"/>
+				</content>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List noDataText="{i18n>list_empty}" id="list" items="{/Headers}" itemPress="onItemPress">
+				<items>
+					<ObjectListItem type="Active" title="{SupplierName}" number="{GrossAmount}" numberUnit="{CurrencyCode}" intro="{PoId}">
+						<attributes>
+							<ObjectAttribute title="{i18n>created_at}" text="{CreatedAt}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
 </mvc:View>
