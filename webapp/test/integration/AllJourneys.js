@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "hayamax.aluno0.minhas_compras.view.",
+		viewNamespace: "ovly.aluno00.minhas_compras.view.",
 		autoWait: true
 	});
 });

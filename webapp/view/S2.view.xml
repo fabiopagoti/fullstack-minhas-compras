@@ -1,5 +1,5 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
-	controllerName="hayamax.aluno0.minhas_compras.controller.S2">
+	controllerName="ovly.aluno00.minhas_compras.controller.S2">
 	<Page title="{i18n>s2_title}">
 		<content>
 			<ObjectHeader xmlns="sap.m" title="{path:'SupplierName',formatter: '.formatador.toUpperCase' }" number="{GrossAmount}" numberUnit="{CurrencyCode}" intro="{PoId}">
@@ -48,11 +48,11 @@
 							<Text text="{i18n>s2_column_price}"/>
 						</header>
 					</Column>
-					<Column minScreenWidth="Phone">
-						<header>
-							<Text text="{i18n>s2_column_total}"/>
-						</header>
-					</Column>
+					<!--<Column minScreenWidth="Phone">-->
+					<!--	<header>-->
+					<!--		<Text text="{i18n>s2_column_total}"/>-->
+					<!--	</header>-->
+					<!--</Column>-->
 				</columns>
 			</Table>
 		</content>

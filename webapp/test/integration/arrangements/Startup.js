@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Opa5) {
 	"use strict";
 
-	return Opa5.extend("hayamax.aluno0.minhas_compras.test.integration.arrangements.Startup", {
+	return Opa5.extend("ovly.aluno00.minhas_compras.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptionsParameter) {
 			var oOptions = oOptionsParameter || {};
@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "hayamax.aluno0.minhas_compras",
+					name: "ovly.aluno00.minhas_compras",
 					async: true
 				},
 				hash: oOptions.hash,

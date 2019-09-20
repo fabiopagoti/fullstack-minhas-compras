@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"hayamax/aluno0/minhas_compras/model/models"
+	"ovly/aluno00/minhas_compras/model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("hayamax.aluno0.minhas_compras.Component", {
+	return UIComponent.extend("ovly.aluno00.minhas_compras.Component", {
 
 		metadata: {
 			manifest: "json"

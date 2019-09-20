@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"hayamax/aluno0/minhas_compras/controller/S1.controller"
+	"ovly/aluno00/minhas_compras/controller/S1.controller"
 ], function (Controller) {
 	"use strict";
 

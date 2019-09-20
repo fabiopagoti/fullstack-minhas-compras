@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "hayamax.aluno0.minhas_compras",
+		"id": "ovly.aluno00.minhas_compras",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -14,8 +14,8 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"ZOVLY_0_MY_PO_SRV": {
-				"uri": "/sap/opu/odata/sap/ZOVLY_0_MY_PO_SRV/",
+			"API": {
+				"uri": "/sap/opu/odata/sap/ZT37_79_MY_PO_SRV/",
 				"type": "OData",
 				"settings": {
 					"localUri": "localService/metadata.xml"
@@ -42,7 +42,7 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "hayamax.aluno0.minhas_compras.view.S0",
+			"viewName": "ovly.aluno00.minhas_compras.view.S0",
 			"type": "XML",
 			"async": true,
 			"id": "S1"
@@ -63,7 +63,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "hayamax.aluno0.minhas_compras.i18n.i18n"
+					"bundleName": "ovly.aluno00.minhas_compras.i18n.i18n"
 				}
 			},
 			"": {
@@ -73,7 +73,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "ZOVLY_0_MY_PO_SRV",
+				"dataSource": "API",
 				"preload": true
 			}
 		},
@@ -89,7 +89,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "hayamax.aluno0.minhas_compras.view",
+				"viewPath": "ovly.aluno00.minhas_compras.view",
 				"controlAggregation": "masterPages",
 				"controlId": "root",
 				"clearControlAggregation": false

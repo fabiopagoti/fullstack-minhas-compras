@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="hayamax.aluno0.minhas_compras.controller.S1" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ovly.aluno00.minhas_compras.controller.S1" displayBlock="true">
 	<Page id="page" title="{i18n>s1_title}">
 		<subHeader>
 			<Toolbar width="100%" id="toolbar1">

@@ -1,15 +1,16 @@
-<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
-	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
 	<edmx:DataServices m:DataServiceVersion="2.0">
-		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZOVLY_0_MY_PO_SRV" xml:lang="en" sap:schema-version="1">
+		<Schema Namespace="ZT37_79_MY_PO_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="Header" sap:content-version="1">
 				<Key><PropertyRef Name="PoKey"/></Key><Property Name="PoKey" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Node Key" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false" sap:filterable="false"/><Property Name="PoId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchase Order ID"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Company"
-					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CreatedAt" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CreatedAt" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created At" sap:creatable="false"
 					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="GrossAmount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Gross Amount"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency Code"
-					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><NavigationProperty Name="ToItems" Relationship="ZOVLY_0_MY_PO_SRV.Header_Item" FromRole="FromRole_Header_Item" ToRole="ToRole_Header_Item"/></EntityType>
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><NavigationProperty Name="ToItems" Relationship="ZT37_79_MY_PO_SRV.Header_Item" FromRole="FromRole_Header_Item" ToRole="ToRole_Header_Item"/></EntityType>
 			<EntityType Name="Item" sap:content-version="1">
 				<Key><PropertyRef Name="PoKey"/><PropertyRef Name="Position"/></Key><Property Name="PoKey" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Node Key" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false" sap:filterable="false"/><Property Name="Position" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Item Position"
@@ -18,22 +19,19 @@
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialName" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Description"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Price"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PriceCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency Code"
-					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="GrossAmount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Gross Amount"
-					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="GrossAmountCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency Code"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/></EntityType>
-			<Association Name="Header_Item" sap:content-version="1"><End Type="ZOVLY_0_MY_PO_SRV.Header" Multiplicity="1" Role="FromRole_Header_Item"/><End Type="ZOVLY_0_MY_PO_SRV.Item" Multiplicity="*" Role="ToRole_Header_Item"/>
+			<Association Name="Header_Item" sap:content-version="1"><End Type="ZT37_79_MY_PO_SRV.Header" Multiplicity="1" Role="FromRole_Header_Item"/><End Type="ZT37_79_MY_PO_SRV.Item" Multiplicity="*" Role="ToRole_Header_Item"/>
 				<ReferentialConstraint>
 					<Principal Role="FromRole_Header_Item"><PropertyRef Name="PoKey"/></Principal>
 					<Dependent Role="ToRole_Header_Item"><PropertyRef Name="PoKey"/></Dependent>
 				</ReferentialConstraint>
 			</Association>
-			<EntityContainer Name="ZOVLY_0_MY_PO_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Items" EntityType="ZOVLY_0_MY_PO_SRV.Item" sap:creatable="false" sap:updatable="false" sap:deletable="false"
-				sap:pageable="false" sap:content-version="1"/><EntitySet Name="Headers" EntityType="ZOVLY_0_MY_PO_SRV.Header" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+			<EntityContainer Name="ZT37_79_MY_PO_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Headers" EntityType="ZT37_79_MY_PO_SRV.Header" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="Items" EntityType="ZT37_79_MY_PO_SRV.Item" sap:creatable="false" sap:updatable="false" sap:deletable="false"
 				sap:pageable="false" sap:content-version="1"/>
-				<AssociationSet Name="Headers_Items" Association="ZOVLY_0_MY_PO_SRV.Header_Item" sap:creatable="false" sap:updatable="false"
+				<AssociationSet Name="Headers_Items" Association="ZT37_79_MY_PO_SRV.Header_Item" sap:creatable="false" sap:updatable="false"
 					sap:deletable="false" sap:content-version="1"><End EntitySet="Headers" Role="FromRole_Header_Item"/><End EntitySet="Items" Role="ToRole_Header_Item"/></AssociationSet>
-			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
-				href="https://dev.ecc.hayamax.com.br:3000/sap/opu/odata/sap/ZOVLY_0_MY_PO_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
-				href="https://dev.ecc.hayamax.com.br:3000/sap/opu/odata/sap/ZOVLY_0_MY_PO_SRV/$metadata"/></Schema>
+			</EntityContainer><atom:link rel="self" href="https://dev.s4.ovly:80/sap/opu/odata/sap/ZT37_79_MY_PO_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="https://dev.s4.ovly:80/sap/opu/odata/sap/ZT37_79_MY_PO_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

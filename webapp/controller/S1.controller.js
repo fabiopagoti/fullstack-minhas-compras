@@ -1,10 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter", // VIRGULA
-	"hayamax/aluno0/minhas_compras/model/formatter"
+	"ovly/aluno00/minhas_compras/model/formatter"
 	], function (Controller, Filter, formatter) {
 	"use strict";
-	return Controller.extend("hayamax.aluno0.minhas_compras.controller.S1", {
+	return Controller.extend("ovly.aluno00.minhas_compras.controller.S1", {
 		
 		formatador: formatter,
 		
